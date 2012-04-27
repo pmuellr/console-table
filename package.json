@@ -1,0 +1,43 @@
+{
+    "name":              "console-table",
+    "description":       "ascii version of console.table() function",
+    "author":            "Patrick Mueller",
+    "version":           "0.1.0",
+    "tags":              [ "console", "table", "debug" ],
+    
+    "licenses": [ 
+        {
+        "type":          "Apache 2.0",
+         "url":          "http://www.apache.org/licenses/LICENSE-2.0"
+        } 
+    ],
+    
+    "engines": {
+        "node":          ">=0.6.0"
+    },
+    
+    "directories": {
+        "lib" :          "./lib"
+    },
+    
+    "dependencies": {
+        "underscore":    "1.3.x"
+    },
+    
+    "devDependencies": {
+        "coffee-script": "1.3.x",
+        "browserify":    "1.10.x",
+        "jasmine-node":  "1.0.x"
+    },
+
+    "main" :             "./lib/console-table",
+    
+    "homepage":          "https://github.com/pmuellr/console-table",
+    "bugs":              "https://github.com/pmuellr/console-table/issues",
+    
+    "repository": {
+      "type":            "git",
+      "url":             "git://github.com/pmuellr/console-table"
+    }
+}
+
