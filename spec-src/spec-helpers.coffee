@@ -11,12 +11,14 @@ class SpecHelpers
     beforeEach: (suite) ->
         @lines  = []
         
+        console.table = require "../lib/console-table"
+        
         console.table.logger = (line) => @consoleLog(line)
 
         suite.addMatchers {toEqualArray}
 
     #---------------------------------------------------------------------------
-    afterEach: ->
+    afterEach: (suite) ->
         console.table.logger = null
         @lines = null
 

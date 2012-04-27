@@ -1,9 +1,6 @@
 ### Licensed under the Apache License, Version 2.0. See footer for details ###
 
-console.table = require "../lib/console-table"
-SpecHelpers   = require "./spec-helpers"
-    
-specHelpers = new SpecHelpers
+specHelpers = new(require "./spec-helpers")
     
 #-------------------------------------------------------------------------------
 describe "console.table(array)", ->
@@ -11,7 +8,7 @@ describe "console.table(array)", ->
     #---------------------------------------------------------------------------
     beforeEach -> specHelpers.beforeEach @
     afterEach  -> specHelpers.afterEach  @
-    
+
     #---------------------------------------------------------------------------
     it "should pass", ->
         expect(1).toEqual 1

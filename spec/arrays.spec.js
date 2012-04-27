@@ -5,13 +5,9 @@
 
 
 (function() {
-  var SpecHelpers, specHelpers;
+  var specHelpers;
 
-  console.table = require("../lib/console-table");
-
-  SpecHelpers = require("./spec-helpers");
-
-  specHelpers = new SpecHelpers;
+  specHelpers = new (require("./spec-helpers"));
 
   describe("console.table(array)", function() {
     beforeEach(function() {

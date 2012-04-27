@@ -18,6 +18,7 @@
     SpecHelpers.prototype.beforeEach = function(suite) {
       var _this = this;
       this.lines = [];
+      console.table = require("../lib/console-table");
       console.table.logger = function(line) {
         return _this.consoleLog(line);
       };
@@ -26,7 +27,7 @@
       });
     };
 
-    SpecHelpers.prototype.afterEach = function() {
+    SpecHelpers.prototype.afterEach = function(suite) {
       console.table.logger = null;
       return this.lines = null;
     };
