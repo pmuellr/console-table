@@ -18,10 +18,15 @@ For more info, see:
 node API
 --------
 
-Use console-table as an npm package:
+Use console-table as a node package:
 
     consoleTable = require("console-table")
     consoleTable(someObject)
+    
+or if you don't mind monkey-patching `console`:
+
+    console.table = require("console-table")
+    console.table(someObject)
 
 browser API
 -----------
@@ -30,7 +35,7 @@ include the following script in your HTML:
 
     <script src="path-to/console-table.js"></script>
     
-That will add a `table` function to `console`, then use it as
+That will add a `table` function to `console`, then use it as:
 
     console.table(someObject)
 
