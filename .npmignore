@@ -1,3 +1,9 @@
+# Licensed under the Apache License, Version 2.0. See footer for details
+
+tmp
+lib-src
+test
+
 #-------------------------------------------------------------------------------
 # Copyright 2012 Patrick Mueller
 # 
@@ -14,6 +20,3 @@
 # limitations under the License.
 #-------------------------------------------------------------------------------
 
-tmp
-lib-src
-test

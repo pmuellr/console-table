@@ -5,37 +5,16 @@
 
 
 (function() {
-  var SpecHelpers, specHelpers;
 
-  console.table = require("../lib/console-table");
-
-  SpecHelpers = require("./spec-helpers");
-
-  specHelpers = new SpecHelpers;
-
-  describe("console.table(array)", function() {
-    beforeEach(function() {
-      return specHelpers.beforeEach(this);
-    });
-    afterEach(function() {
-      return specHelpers.afterEach(this);
-    });
-    it("should pass", function() {
-      return expect(1).toEqual(1);
-    });
-    return xit("should ...", function() {
-      var line, lines, _i, _len, _results;
-      console.table(null);
-      lines = specHelpers.getLines();
-      expect(lines).toEqualArray("");
-      _results = [];
-      for (_i = 0, _len = lines.length; _i < _len; _i++) {
-        line = lines[_i];
-        _results.push(console.log(line));
-      }
-      return _results;
-    });
-  });
+  window.require = function(moduleId) {
+    if (moduleId === "../lib/console-table") {
+      return console.table;
+    }
+    if (moduleId === "./spec-helpers") {
+      return SpecHelpers;
+    }
+    throw new Error("unexpected moduleid for require(): " + moduleId);
+  };
 
   /*
   #-------------------------------------------------------------------------------

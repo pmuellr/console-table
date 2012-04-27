@@ -1,3 +1,9 @@
+# Licensed under the Apache License, Version 2.0. See footer for details
+
+tmp
+node_modules
+vendor
+
 #-------------------------------------------------------------------------------
 # Copyright 2012 Patrick Mueller
 # 
@@ -13,7 +19,3 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #-------------------------------------------------------------------------------
-
-tmp
-node_modules
-vendor

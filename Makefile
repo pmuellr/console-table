@@ -1,18 +1,4 @@
-#-------------------------------------------------------------------------------
-# Copyright 2012 Patrick Mueller
-# 
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-# 
-#    http://www.apache.org/licenses/LICENSE-2.0
-# 
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#-------------------------------------------------------------------------------
+# Licensed under the Apache License, Version 2.0. See footer for details
 
 .PHONY: all build vendor test
 
@@ -51,13 +37,14 @@ build:
 	    lib-src/console-table.coffee
 
 #   compile browserify'd bits into /lib-browser/console-table.js
-	@-chmod -R +w                     lib-browser/* 
-	@rm -rf                           lib-browser/*
-	@cat etc/source-license-js.txt >  lib-browser/console-table.js
-	@echo ";(function(){"          >> lib-browser/console-table.js
-	@cat tmp/console-table.js      >> lib-browser/console-table.js
-	@echo "})();"                  >> lib-browser/console-table.js
-	@chmod -R -w                      lib-browser/* 
+	@-chmod -R +w                            lib-browser/* 
+	@rm -rf                                  lib-browser/*
+	@cat etc/source-license-js-before.txt >  lib-browser/console-table.js
+	@echo ";(function(){"                 >> lib-browser/console-table.js
+	@cat tmp/console-table.js             >> lib-browser/console-table.js
+	@echo "})();"                         >> lib-browser/console-table.js
+	@cat etc/source-license-js-after.txt  >> lib-browser/console-table.js
+	@chmod -R -w                             lib-browser/* 
 
 #-------------------------------------------------------------------------------
 test: build
@@ -91,3 +78,19 @@ vendor:
 	@mv tmp/jasmine-standalone-$(JASMINE_VERSION) vendor/jasmine
 	@mv    vendor/jasmine/lib/jasmine-$(JASMINE_VERSION)/* vendor/jasmine/lib
 	@rmdir vendor/jasmine/lib/jasmine-$(JASMINE_VERSION)
+
+#-------------------------------------------------------------------------------
+# Copyright 2012 Patrick Mueller
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#    http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#-------------------------------------------------------------------------------

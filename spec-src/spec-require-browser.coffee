@@ -1,16 +1,16 @@
-# Licensed under the Apache License, Version 2.0. See footer for details
+### Licensed under the Apache License, Version 2.0. See footer for details ###
 
---exec
---stdoutcolor blue
---stderrcolor red
+window.require = (moduleId) ->
 
-make test
+    if moduleId == "../lib/console-table"
+        return console.table
+        
+    if moduleId == "./spec-helpers"
+        return SpecHelpers
+    
+    throw new Error "unexpected moduleid for require(): #{moduleId}"
 
-lib-src
-Makefile
-package.json
-spec-src
-
+###
 #-------------------------------------------------------------------------------
 # Copyright 2012 Patrick Mueller
 # 
@@ -18,7 +18,7 @@ spec-src
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 # 
-#     http://www.apache.org/licenses/LICENSE-2.0
+#    http://www.apache.org/licenses/LICENSE-2.0
 # 
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,4 +26,4 @@ spec-src
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #-------------------------------------------------------------------------------
-
+###

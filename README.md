@@ -1,3 +1,5 @@
+<!-- Licensed under the Apache License, Version 2.0. See footer for details -->
+
 console-table
 =============
 
@@ -57,5 +59,3 @@ See the `Makefile` and the `.wr` files.
 # limitations under the License.
 #-------------------------------------------------------------------------------
 -->
-
-
