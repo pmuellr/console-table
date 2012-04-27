@@ -13,9 +13,7 @@ describe "console.table(scalar)", ->
     it "should handle console.table(null)", ->
         console.table null
         
-        lines = specHelpers.getLines()
-        
-        expect(lines).toEqualLines """
+        expect(specHelpers.lines).toEqualLines """
             | value |
             ---------
             | null  |
@@ -25,9 +23,7 @@ describe "console.table(scalar)", ->
     it "should handle console.table(undefined)", ->
         console.table undefined
 
-        lines = specHelpers.getLines()
-        
-        expect(lines).toEqualLines """
+        expect(specHelpers.lines).toEqualLines """
             | value |
             ---------
             |       |
@@ -37,9 +33,7 @@ describe "console.table(scalar)", ->
     it "should handle console.table('x')", ->
         console.table 'x'
 
-        lines = specHelpers.getLines()
-
-        expect(lines).toEqualLines """
+        expect(specHelpers.lines).toEqualLines """
             | value |
             ---------
             | x     |
@@ -49,21 +43,17 @@ describe "console.table(scalar)", ->
     it "should handle console.table(1)", ->
         console.table 1
 
-        lines = specHelpers.getLines()
-        
-        expect(lines).toEqualLines """
+        expect(specHelpers.lines).toEqualLines """
             | value |
             ---------
-            | 1     |
+            |     1 |
         """
         
     #---------------------------------------------------------------------------
     it "should handle console.table(false)", ->
         console.table false
         
-        lines = specHelpers.getLines()
-        
-        expect(lines).toEqualLines """
+        expect(specHelpers.lines).toEqualLines """
             | value |
             ---------
             | false |
@@ -73,9 +63,7 @@ describe "console.table(scalar)", ->
     it "should handle console.table(function)", ->
         console.table ->
         
-        lines = specHelpers.getLines()
-        
-        expect(lines).toEqualLines """
+        expect(specHelpers.lines).toEqualLines """
             ||
         """
         
@@ -83,9 +71,7 @@ describe "console.table(scalar)", ->
     it "should handle console.table(NaN)", ->
         console.table 1/'x'
         
-        lines = specHelpers.getLines()
-        
-        expect(lines).toEqualLines """
+        expect(specHelpers.lines).toEqualLines """
             | value |
             ---------
             | NaN   |
@@ -93,14 +79,13 @@ describe "console.table(scalar)", ->
 
     #---------------------------------------------------------------------------
     xit "should ...", ->
-        console.table null
+        console.table ->
         
-        lines = specHelpers.getLines()
-        
-        expect(lines).toEqualLines """
+        expect(specHelpers.lines).toEqualLines """
+            ||
         """
         
-        console.log line for line in lines
+        console.log line for line in specHelpers.lines
 
 ###        
 #-------------------------------------------------------------------------------

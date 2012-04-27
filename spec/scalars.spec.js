@@ -17,55 +17,41 @@
       return specHelpers.afterEach(this);
     });
     it("should handle console.table(null)", function() {
-      var lines;
       console.table(null);
-      lines = specHelpers.getLines();
-      return expect(lines).toEqualLines("| value |\n---------\n| null  |");
+      return expect(specHelpers.lines).toEqualLines("| value |\n---------\n| null  |");
     });
     it("should handle console.table(undefined)", function() {
-      var lines;
       console.table(void 0);
-      lines = specHelpers.getLines();
-      return expect(lines).toEqualLines("| value |\n---------\n|       |");
+      return expect(specHelpers.lines).toEqualLines("| value |\n---------\n|       |");
     });
     it("should handle console.table('x')", function() {
-      var lines;
       console.table('x');
-      lines = specHelpers.getLines();
-      return expect(lines).toEqualLines("| value |\n---------\n| x     |");
+      return expect(specHelpers.lines).toEqualLines("| value |\n---------\n| x     |");
     });
     it("should handle console.table(1)", function() {
-      var lines;
       console.table(1);
-      lines = specHelpers.getLines();
-      return expect(lines).toEqualLines("| value |\n---------\n| 1     |");
+      return expect(specHelpers.lines).toEqualLines("| value |\n---------\n|     1 |");
     });
     it("should handle console.table(false)", function() {
-      var lines;
       console.table(false);
-      lines = specHelpers.getLines();
-      return expect(lines).toEqualLines("| value |\n---------\n| false |");
+      return expect(specHelpers.lines).toEqualLines("| value |\n---------\n| false |");
     });
     it("should handle console.table(function)", function() {
-      var lines;
       console.table(function() {});
-      lines = specHelpers.getLines();
-      return expect(lines).toEqualLines("||");
+      return expect(specHelpers.lines).toEqualLines("||");
     });
     it("should handle console.table(NaN)", function() {
-      var lines;
       console.table(1 / 'x');
-      lines = specHelpers.getLines();
-      return expect(lines).toEqualLines("| value |\n---------\n| NaN   |");
+      return expect(specHelpers.lines).toEqualLines("| value |\n---------\n| NaN   |");
     });
     return xit("should ...", function() {
-      var line, lines, _i, _len, _results;
-      console.table(null);
-      lines = specHelpers.getLines();
-      expect(lines).toEqualLines("");
+      var line, _i, _len, _ref, _results;
+      console.table(function() {});
+      expect(specHelpers.lines).toEqualLines("||");
+      _ref = specHelpers.lines;
       _results = [];
-      for (_i = 0, _len = lines.length; _i < _len; _i++) {
-        line = lines[_i];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        line = _ref[_i];
         _results.push(console.log(line));
       }
       return _results;

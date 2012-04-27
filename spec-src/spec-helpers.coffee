@@ -23,9 +23,6 @@ class SpecHelpers
         @lines = null
 
     #---------------------------------------------------------------------------
-    getLines: -> @lines
-
-    #---------------------------------------------------------------------------
     consoleLog: (line) -> 
         @lines.push(line)
 
@@ -36,17 +33,23 @@ trimBlanks = (string) ->
 #-------------------------------------------------------------------------------
 toEqualLines = (expected) ->
 
+    failMessage = -> "Expected table was actually\n#{@actual.join('\n')}"
+    
     if typeof expected is "string"
         expected = trimBlanks(expected)
         expected = expected.split "\n"
 
-    return false if @actual.length != expected.length
+    if @actual.length != expected.length
+        @message = failMessage
+        return false 
     
     for i in [0...@actual.length]
         aItem = @actual[i]
         eItem =  expected[i]
         
-        return false if aItem != eItem
+        if aItem != eItem
+            @message = failMessage
+            return false 
         
     return true
 

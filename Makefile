@@ -50,9 +50,9 @@ build:
 test: build
 
 #   run command-line Jasmine tests
-	@-$(JASMINE) --coffee --color spec
+	@-$(JASMINE) spec
 	@echo 
-	@echo also open browser tests at spec/spec-runner.html
+	@echo also open browser tests at spec-src/spec-runner.html
 
 #-------------------------------------------------------------------------------
 vendor:

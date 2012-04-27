@@ -15,14 +15,11 @@ describe "console.table(array)", ->
         
     #---------------------------------------------------------------------------
     xit "should ...", ->
-        console.table null
+        console.table ->
         
-        lines = specHelpers.getLines()
-        
-        expect(lines).toEqualLines """
+        expect(specHelpers.lines).toEqualLines """
+            ||
         """
-        
-        console.log line for line in lines
         
 ###
 #-------------------------------------------------------------------------------

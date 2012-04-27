@@ -17,38 +17,28 @@
       return specHelpers.afterEach(this);
     });
     it("should handle empty objects", function() {
-      var lines;
       console.table({});
-      lines = specHelpers.getLines();
-      return expect(lines).toEqualLines("||");
+      return expect(specHelpers.lines).toEqualLines("||");
     });
     it("should handle simple objects", function() {
-      var line, lines, _i, _len, _results;
+      var line, _i, _len, _ref, _results;
       console.table({
         a: 1,
         b: 2,
         c: 101
       });
-      lines = specHelpers.getLines();
-      expect(lines).toEqualLines("");
+      expect(specHelpers.lines).toEqualLines("");
+      _ref = specHelpers.lines;
       _results = [];
-      for (_i = 0, _len = lines.length; _i < _len; _i++) {
-        line = lines[_i];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        line = _ref[_i];
         _results.push(console.log(line));
       }
       return _results;
     });
     return xit("should ...", function() {
-      var line, lines, _i, _len, _results;
-      console.table(null);
-      lines = specHelpers.getLines();
-      expect(lines).toEqualLines("");
-      _results = [];
-      for (_i = 0, _len = lines.length; _i < _len; _i++) {
-        line = lines[_i];
-        _results.push(console.log(line));
-      }
-      return _results;
+      console.table(function() {});
+      return expect(specHelpers.lines).toEqualLines("||");
     });
   });
 

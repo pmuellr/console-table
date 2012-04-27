@@ -13,9 +13,7 @@ describe "console.table(object)", ->
     it "should handle empty objects", ->
         console.table {}
         
-        lines = specHelpers.getLines()
-        
-        expect(lines).toEqualLines """
+        expect(specHelpers.lines).toEqualLines """
             ||
         """
         
@@ -26,23 +24,18 @@ describe "console.table(object)", ->
             b: 2
             c: 101
         
-        lines = specHelpers.getLines()
-        
-        expect(lines).toEqualLines """
+        expect(specHelpers.lines).toEqualLines """
         """
         
-        console.log line for line in lines
+        console.log line for line in specHelpers.lines
         
     #---------------------------------------------------------------------------
     xit "should ...", ->
-        console.table null
+        console.table ->
         
-        lines = specHelpers.getLines()
-        
-        expect(lines).toEqualLines """
+        expect(specHelpers.lines).toEqualLines """
+            ||
         """
-        
-        console.log line for line in lines
         
 ###
 #-------------------------------------------------------------------------------

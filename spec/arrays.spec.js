@@ -20,16 +20,8 @@
       return expect(1).toEqual(1);
     });
     return xit("should ...", function() {
-      var line, lines, _i, _len, _results;
-      console.table(null);
-      lines = specHelpers.getLines();
-      expect(lines).toEqualLines("");
-      _results = [];
-      for (_i = 0, _len = lines.length; _i < _len; _i++) {
-        line = lines[_i];
-        _results.push(console.log(line));
-      }
-      return _results;
+      console.table(function() {});
+      return expect(specHelpers.lines).toEqualLines("||");
     });
   });
 

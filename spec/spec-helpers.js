@@ -32,10 +32,6 @@
       return this.lines = null;
     };
 
-    SpecHelpers.prototype.getLines = function() {
-      return this.lines;
-    };
-
     SpecHelpers.prototype.consoleLog = function(line) {
       return this.lines.push(line);
     };
@@ -49,18 +45,23 @@
   };
 
   toEqualLines = function(expected) {
-    var aItem, eItem, i, _i, _ref;
+    var aItem, eItem, failMessage, i, _i, _ref;
+    failMessage = function() {
+      return "Expected table was actually\n" + (this.actual.join('\n'));
+    };
     if (typeof expected === "string") {
       expected = trimBlanks(expected);
       expected = expected.split("\n");
     }
     if (this.actual.length !== expected.length) {
+      this.message = failMessage;
       return false;
     }
     for (i = _i = 0, _ref = this.actual.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
       aItem = this.actual[i];
       eItem = expected[i];
       if (aItem !== eItem) {
+        this.message = failMessage;
         return false;
       }
     }
