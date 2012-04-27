@@ -23,7 +23,7 @@
       var line, lines, _i, _len, _results;
       console.table(null);
       lines = specHelpers.getLines();
-      expect(lines).toEqualArray("");
+      expect(lines).toEqualLines("");
       _results = [];
       for (_i = 0, _len = lines.length; _i < _len; _i++) {
         line = lines[_i];

@@ -15,7 +15,7 @@ class SpecHelpers
         
         console.table.logger = (line) => @consoleLog(line)
 
-        suite.addMatchers {toEqualArray}
+        suite.addMatchers {toEqualLines}
 
     #---------------------------------------------------------------------------
     afterEach: (suite) ->
@@ -34,7 +34,7 @@ trimBlanks = (string) ->
     string.replace /^\s+|\s+$/g, ""
     
 #-------------------------------------------------------------------------------
-toEqualArray = (expected) ->
+toEqualLines = (expected) ->
 
     if typeof expected is "string"
         expected = trimBlanks(expected)

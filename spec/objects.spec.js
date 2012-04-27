@@ -20,7 +20,7 @@
       var lines;
       console.table({});
       lines = specHelpers.getLines();
-      return expect(lines).toEqualArray("||");
+      return expect(lines).toEqualLines("||");
     });
     it("should handle simple objects", function() {
       var line, lines, _i, _len, _results;
@@ -30,7 +30,7 @@
         c: 101
       });
       lines = specHelpers.getLines();
-      expect(lines).toEqualArray("");
+      expect(lines).toEqualLines("");
       _results = [];
       for (_i = 0, _len = lines.length; _i < _len; _i++) {
         line = lines[_i];
@@ -42,7 +42,7 @@
       var line, lines, _i, _len, _results;
       console.table(null);
       lines = specHelpers.getLines();
-      expect(lines).toEqualArray("");
+      expect(lines).toEqualLines("");
       _results = [];
       for (_i = 0, _len = lines.length; _i < _len; _i++) {
         line = lines[_i];

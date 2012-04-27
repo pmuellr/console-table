@@ -20,49 +20,49 @@
       var lines;
       console.table(null);
       lines = specHelpers.getLines();
-      return expect(lines).toEqualArray("| value |\n---------\n| null  |");
+      return expect(lines).toEqualLines("| value |\n---------\n| null  |");
     });
     it("should handle console.table(undefined)", function() {
       var lines;
       console.table(void 0);
       lines = specHelpers.getLines();
-      return expect(lines).toEqualArray("| value |\n---------\n|       |");
+      return expect(lines).toEqualLines("| value |\n---------\n|       |");
     });
     it("should handle console.table('x')", function() {
       var lines;
       console.table('x');
       lines = specHelpers.getLines();
-      return expect(lines).toEqualArray("| value |\n---------\n| x     |");
+      return expect(lines).toEqualLines("| value |\n---------\n| x     |");
     });
     it("should handle console.table(1)", function() {
       var lines;
       console.table(1);
       lines = specHelpers.getLines();
-      return expect(lines).toEqualArray("| value |\n---------\n| 1     |");
+      return expect(lines).toEqualLines("| value |\n---------\n| 1     |");
     });
     it("should handle console.table(false)", function() {
       var lines;
       console.table(false);
       lines = specHelpers.getLines();
-      return expect(lines).toEqualArray("| value |\n---------\n| false |");
+      return expect(lines).toEqualLines("| value |\n---------\n| false |");
     });
     it("should handle console.table(function)", function() {
       var lines;
       console.table(function() {});
       lines = specHelpers.getLines();
-      return expect(lines).toEqualArray("||");
+      return expect(lines).toEqualLines("||");
     });
     it("should handle console.table(NaN)", function() {
       var lines;
       console.table(1 / 'x');
       lines = specHelpers.getLines();
-      return expect(lines).toEqualArray("| value |\n---------\n| NaN   |");
+      return expect(lines).toEqualLines("| value |\n---------\n| NaN   |");
     });
     return xit("should ...", function() {
       var line, lines, _i, _len, _results;
       console.table(null);
       lines = specHelpers.getLines();
-      expect(lines).toEqualArray("");
+      expect(lines).toEqualLines("");
       _results = [];
       for (_i = 0, _len = lines.length; _i < _len; _i++) {
         line = lines[_i];

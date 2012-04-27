@@ -19,7 +19,7 @@ describe "console.table(array)", ->
         
         lines = specHelpers.getLines()
         
-        expect(lines).toEqualArray """
+        expect(lines).toEqualLines """
         """
         
         console.log line for line in lines

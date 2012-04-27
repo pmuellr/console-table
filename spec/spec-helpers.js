@@ -5,7 +5,7 @@
 
 
 (function() {
-  var SpecHelpers, toEqualArray, trimBlanks;
+  var SpecHelpers, toEqualLines, trimBlanks;
 
   SpecHelpers = (function() {
 
@@ -23,7 +23,7 @@
         return _this.consoleLog(line);
       };
       return suite.addMatchers({
-        toEqualArray: toEqualArray
+        toEqualLines: toEqualLines
       });
     };
 
@@ -48,7 +48,7 @@
     return string.replace(/^\s+|\s+$/g, "");
   };
 
-  toEqualArray = function(expected) {
+  toEqualLines = function(expected) {
     var aItem, eItem, i, _i, _ref;
     if (typeof expected === "string") {
       expected = trimBlanks(expected);
